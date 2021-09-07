@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+
 public class AddressBook {
 	public static List<Contact> contactList = new ArrayList<>();
 
@@ -48,8 +49,8 @@ public class AddressBook {
 	}
 
 	private static void displayContact() {
-		for (Contact contact1 : contactList) {
-			contact1.display();
+		for (Contact contact : contactList) {
+			contact.display();
 
 		}
 
@@ -81,9 +82,9 @@ public class AddressBook {
 	}
 
 	public static Contact getPerson(String firstName, String lastName) {
-		for (Contact contact1 : contactList) {
-			if (contact1.firstName.equals(firstName) && contact1.lastName.equals(lastName)) {
-				return contact1;
+		for (Contact contact : contactList) {
+			if (contact.firstName.equals(firstName) && contact.lastName.equals(lastName)) {
+				return contact;
 			}
 
 		}
