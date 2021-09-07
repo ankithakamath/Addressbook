@@ -1,7 +1,8 @@
 package com.yml.address;
 
 public class Contact {
-	private String firstName,lastName,address,city,state,zip,phoneNumber,email;
+	public String firstName,lastName,address,city,state,zip,phoneNumber,email;
+	
 	public Contact(String firstName,String lastName,String address,String city,String state,String zip,String phoneNumber,String email)
 	{
 		this.firstName=firstName;
