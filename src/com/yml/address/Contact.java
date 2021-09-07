@@ -1,7 +1,15 @@
 package com.yml.address;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Contact {
-	public String firstName,lastName,address,city,state,zip,phoneNumber,email;
+	
+	public String firstName, lastName, address, city, state, zip, phoneNumber, email;
+	List<Contact> contactList = new ArrayList<>();
+
+	Contact() {
+
+	}
 	
 	public Contact(String firstName,String lastName,String address,String city,String state,String zip,String phoneNumber,String email)
 	{
