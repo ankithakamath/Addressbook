@@ -1,38 +1,114 @@
 package com.yml.address;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Contact {
+	private String firstName;
+	private String lastName;
+	private String address;
+	private String city;
+	private String state;
+	private int zip;
+	private BigInteger mobileNo;
+	private String email;
+	public Object contactList;
 	
-	public String firstName, lastName, address, city, state, zip, phoneNumber, email;
-	List<Contact> contactList = new ArrayList<>();
-
-	Contact() {
-
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(firstName, lastName);
 	}
 	
-	public Contact(String firstName,String lastName,String address,String city,String state,String zip,String phoneNumber,String email)
-	{
-		this.firstName=firstName;
-		this.lastName=lastName;
-		this.address=address;
-		this.city=city;
-		this.state=state;
-		this.zip=zip;
-		this.phoneNumber=phoneNumber;
-		this.email=email;
+	/**
+	 *equals method is already implemented so that we cannot add duplicate address book
+	 *of same name
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Contact other = (Contact) obj;
+		return Objects.equals(firstName, other.firstName) && Objects.equals(lastName, other.lastName);
 	}
 	
-	public void display()
-	{
-		System.out.println("First Name:"+firstName);
-		System.out.println("Last Name:"+lastName);
-		System.out.println("Address:"+address);
-		System.out.println("City:"+city);
-		System.out.println("State:"+state);
-		System.out.println("Zip:"+zip);
-		System.out.println("Phone number"+phoneNumber);
-		System.out.println("E-mail:"+email);
+	@Override
+	public String toString() {
+		return "Contact [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", city=" + city
+				+ ", state=" + state + ", zip=" + zip + ", mobileNo=" + mobileNo + ", email=" + email + "]";
 	}
+	
+	public String getFirstName() {
+		return firstName;
+	}
+	
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	
+	public String getLastName() {
+		return lastName;
+	}
+	
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	public String getAddress() {
+		return address;
+	}
+	
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	
+	public String getCity() {
+		return city;
+	}
+	
+	public void setCity(String city) {
+		this.city = city;
+	}
+	
+	public String getState() {
+		return state;
+	}
+	
+	public void setState(String state) {
+		this.state = state;
+	}
+	
+	public int getZip() {
+		return zip;
+	}
+	
+	public void setZip(int zip) {
+		this.zip = zip;
+	}
+	
+	public BigInteger getMobileNo() {
+		return mobileNo;
+	}
+	
+	public void setMobileNo(BigInteger mobileNo) {
+		this.mobileNo = mobileNo;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	
+	
+	
+	
 }
-
