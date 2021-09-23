@@ -1,6 +1,7 @@
 package com.yml.address;
 
 import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Scanner;
 import java.util.Hashtable;
@@ -39,7 +40,7 @@ public static void main(String[] args) {
 }
 
 /*
- * method to perform various opertaion based on choice
+ * method to perform various operation based on choice
  */
 public static void choice(int choice, Contact c) {
 
@@ -129,6 +130,44 @@ public static Contact getPerson(String firstName, String lastName, Contact c) {
 	return null;
 
 }
+private static void search() {
+	System.out.println();
+	System.out.println("Search Person by\n1.City\n2.State");
+	Scanner scanner = new Scanner(System.in);
+	int choice = scanner.nextInt();
+	scanner.nextLine();
+	
+	
+	switch(choice) {
+		case 1:
+			System.out.println("Enter City Name");
+			String city = scanner.nextLine();
+			for(AddressBook addressBook: map.values()) {
+				List<Contact> cityContacts = addressBook.getAddress().stream().filter((contact)->{
+					return contact.getCity().equals(city);
+				}).collect(Collectors.toList());
+				for(Contact contact: cityContacts) {
+					System.out.print(contact.getFirstName()+" "+contact.getLastName());
+				}
+				System.out.println();
+			}
+			break;
+		case 2:
+			System.out.println("Enter State Name");
+			String state = scanner.nextLine();
+			for(AddressBook addressBook: map.values()) {
+				List<Contact> stateContacts = addressBook.getAddress().stream().filter((contact)->{
+					return contact.getState().equals(state);
+				}).collect(Collectors.toList());
+				for(Contact contact: stateContacts) {
+					System.out.print(contact.getFirstName()+" "+contact.getLastName());
+				}
+				System.out.println();
+			}
+			break;
+	}
+}
+
 
 /*
  * method to modify contact
