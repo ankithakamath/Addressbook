@@ -1,9 +1,9 @@
 package com.yml.address;
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
+/**Getter and setter method defined
+ */
 public class Contact {
 	private String firstName;
 	private String lastName;
@@ -13,7 +13,7 @@ public class Contact {
 	private int zip;
 	private BigInteger mobileNo;
 	private String email;
-	public Object contactList;
+	private Contact c;
 	
 	
 	@Override
@@ -106,6 +106,14 @@ public class Contact {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	public void add(Contact c) {
+		this.c = c;
+		
+	}
+
+	
+	
 	
 	
 	
