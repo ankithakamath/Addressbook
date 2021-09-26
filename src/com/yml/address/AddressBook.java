@@ -10,7 +10,7 @@ public class AddressBook {
 		 
 		 
 		 public void addContactDetails(Contact c) {
-			 c.add(c);
+			contactInfo.add(c);
 		 }
 		 
 		 public Set<Contact> getAddress(){
