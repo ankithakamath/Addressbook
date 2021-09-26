@@ -4,7 +4,7 @@ import java.util.Objects;
 
 /**Getter and setter method defined
  */
-public class Contact {
+public class Contact implements Comparable<Contact> {
 	private String firstName;
 	private String lastName;
 	private String address;
@@ -13,7 +13,6 @@ public class Contact {
 	private int zip;
 	private BigInteger mobileNo;
 	private String email;
-	private Contact c;
 	
 	
 	@Override
@@ -107,13 +106,11 @@ public class Contact {
 		this.email = email;
 	}
 
-	public void add(Contact c) {
-		this.c = c;
-		
+	@Override
+	public int compareTo(Contact o) {
+		return (this.firstName+this.lastName).compareTo(o.getFirstName()+o.getLastName());
 	}
 
-	
-	
 	
 	
 	
