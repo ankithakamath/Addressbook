@@ -1,19 +1,16 @@
 package com.yml.address;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class AddressBook {
-	
-		
-		 private Set<Contact> contactInfo = new HashSet<Contact>(); 
-		 
-		 
-		 public void addContactDetails(Contact c) {
-			 c.add(c);
-		 }
-		 
-		 public Set<Contact> getAddress(){
-			 return contactInfo;
-		 }
+
+	private List<Contact> contactInfo = new ArrayList<Contact>();
+
+	public void addContactDetails(Contact c) {
+		contactInfo.add(c);
+	}
+
+	public List<Contact> getAddress() {
+		return contactInfo;
+	}
 }
