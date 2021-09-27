@@ -4,18 +4,14 @@ import java.util.*;
 
 public class AddressBook {
 
+	static List<Contact> contactInfo = new ArrayList<Contact>();
 
-	
-		
-		 private Set<Contact> contactInfo = new HashSet<Contact>(); 
-		 
-		 
-		 public void addContactDetails(Contact c) {
-			contactInfo.add(c);
-		 }
-		 
-		 public Set<Contact> getAddress(){
-			 return contactInfo;
-		 }
+	public void addContactDetails(Contact c) {
+		contactInfo.add(c);
+	}
+
+	public List<Contact> getAddress() {
+		return contactInfo;
+	}
 
 }
