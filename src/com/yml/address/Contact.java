@@ -109,19 +109,7 @@ public class Contact implements Comparable<Contact> {
 
 	@Override
 	public int compareTo(Contact o) {
-
 		return (this.firstName + this.lastName).compareTo(o.getFirstName() + o.getLastName());
 	}
 
 }
-
-		return (this.firstName+this.lastName).compareTo(o.getFirstName()+o.getLastName());
-	}
-
-	
-	
-	
-	
-	
-}
-
